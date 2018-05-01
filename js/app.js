@@ -53,10 +53,10 @@ let Player = function() {
 
 Player.prototype.update = function(dt) {
     // Winning Condition
-    if (player.y <= 35)
+    if (this.y <= 35)
     {
-        player.x = 200;
-        player.y = 380;
+        this.x = 200;
+        this.y = 380;
         scoreLabel.innerText = ++score;
     }
 
@@ -70,27 +70,27 @@ Player.prototype.handleInput = function(key) {
     const xStep = 101;
     const yStep = 83;
     if (key == 'up') {
-        if (player.y > -35) {
-            player.y -= yStep;
+        if (this.y > -35) {
+            this.y -= yStep;
         }
     }
     else if (key == 'down') {
-        if (player.y < 380) {
-            player.y += yStep;
+        if (this.y < 380) {
+            this.y += yStep;
         }
     }
     else if (key == 'right') {
-        if (player.x < 402) {
-            player.x += xStep;
+        if (this.x < 402) {
+            this.x += xStep;
         }
     }
     else if (key == 'left') {
-        if (player.x > -2) {
-            player.x -= xStep;
+        if (this.x > -2) {
+            this.x -= xStep;
         }
     }
 
-    console.log(player.x, player.y);
+    console.log(this.x, this.y);
 }
 
 
